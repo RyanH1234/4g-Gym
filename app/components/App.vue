@@ -145,8 +145,9 @@ export default {
               timeout: 20000
           })
           .then(res => {
-              console.dir(res);
-              let data = {lat: res.latitude, lon: res.longitude, alt: res.altitude, cid, rssi, rsrq, rssnr}
+              const currentDate = new Date();
+
+              let data = {date: currentDate, lat: res.latitude, lon: res.longitude, alt: res.altitude, cid, rssi, rsrq, rssnr}
               
               this.records = [
                 ...this.records,
